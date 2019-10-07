@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es6",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "outDir": "lib",
+    "declarationDir": "types",
+    "alwaysStrict": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "lib": ["es2017"],
+    "baseUrl": ".",
+    "declaration": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": []
+}

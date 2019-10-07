@@ -1,0 +1,35 @@
+{
+  "name": "acquerello",
+  "version": "0.1.0",
+  "description": "Template based terminal coloring made really easy.",
+  "homepage": "https://sw.cowtech.it/acquerello",
+  "repository": "github:ShogunPanda/acquerello",
+  "bugs": {
+    "url": "https://github.com/ShogunPanda/acquerello"
+  },
+  "author": "Shogun <shogun@cowtech.it>",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "lib",
+    "types",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "main": "lib/index.js",
+  "typings": "types/index.d.ts",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf lib/* types/* && ./node_modules/.bin/tslint --project tsconfig.json -t stylish",
+    "build": "tsc -p .",
+    "postpublish": "git push origin && git push origin -f --tags"
+  },
+  "devDependencies": {
+    "@cowtech/tslint-config": "^5.13.0",
+    "@types/node": "^12.7.11",
+    "prettier": "^1.18.2",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  }
+}

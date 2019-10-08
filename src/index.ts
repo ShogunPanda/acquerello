@@ -1,9 +1,12 @@
 import { ANSICode, defaultStyles } from './codes'
-import { resolveStyle } from './template'
+import { convertColorSpec } from './spec'
+import { customStyles } from './styles'
 
 export * from './codes'
+export * from './spec'
 export * from './styles'
-export * from './template'
+
+export const templateMatcher = /\{{2}([^\{\}]+?)\}{2}/gi
 
 export function colorize(raw: string): string {
   // Create a new styles stack
@@ -11,7 +14,7 @@ export function colorize(raw: string): string {
   let stylesInserted = false
 
   // For each tag in the string
-  let modified = raw.replace(/\{{2}([^\{\}]+?)\}{2}/gi, (_: string, spec: string) => {
+  let modified = raw.replace(templateMatcher, (_: string, spec: string) => {
     const revert: Array<ANSICode> = []
     let replacement = ''
 
@@ -19,7 +22,7 @@ export function colorize(raw: string): string {
     const tokens = spec
       .trim()
       .split(/\s+/)
-      .map((s: string) => s.trim().toLowerCase())
+      .map((s: string) => s.trim())
 
     for (const token of tokens) {
       if (token === '-') {
@@ -37,16 +40,24 @@ export function colorize(raw: string): string {
             replacement += stylesStack[0].map((s: ANSICode) => s.open).join('')
           }
         }
+
+        break
       } else if (token === 'reset') {
         // Forget all previously defined styles
         stylesStack = []
+        break
       } else {
-        // Add a style
-        const style = resolveStyle(token)
+        // Search in custom styles first
+        const styles = customStyles.get(token) || [token]
 
-        if (style) {
-          replacement += style.open
-          revert.push(style)
+        for (const style of styles) {
+          // Add a style
+          const code = convertColorSpec(style)
+
+          if (code) {
+            replacement += code.open
+            revert.push(code)
+          }
         }
       }
     }
@@ -66,4 +77,8 @@ export function colorize(raw: string): string {
   }
 
   return modified
+}
+
+export function clean(raw: string): string {
+  return raw.replace(templateMatcher, '')
 }

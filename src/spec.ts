@@ -4,13 +4,19 @@ import { ANSICode, defaultStyles, makeAnsiCode } from './codes'
 export const ansiForeground = { open: 38, close: 39 }
 export const ansiBackground = { open: 48, close: 49 }
 
-export const ansiMatcher = /^(bg)?(ansi):(\d+)(?:[,;](\d+)[,;](\d+))?$/
-export const rgbMatcher = /^(bg)?(rgb):(\d+)[,;](\d+)[,;](\d+)$/
-export const hexMatcher = /^(bg)?(hex):([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/
+export const ansiMatcher = /^(bg)?(ansi):(\d+)(?:[,;](\d+)[,;](\d+))?$/i
+export const rgbMatcher = /^(bg)?(rgb):(\d+)[,;](\d+)[,;](\d+)$/i
+export const hexMatcher = /^(bg)?(hex):(?:#?)([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i
 
-export function resolveStyle(name: string): ANSICode | null {
-  const lastMatch: RegExpMatchArray = name.match(ansiMatcher) || name.match(rgbMatcher) || name.match(hexMatcher) || []
-  const ansiBase = lastMatch[1] === 'bg' ? ansiBackground : ansiForeground
+export function convertColorSpec(name: string): ANSICode | null {
+  const lastMatch: RegExpMatchArray = (
+    name.match(ansiMatcher) ||
+    name.match(rgbMatcher) ||
+    name.match(hexMatcher) ||
+    []
+  ).map((m: string) => (m ? m.toLowerCase() : m))
+
+  const ansiBase = lastMatch[1] && lastMatch[1] === 'bg' ? ansiBackground : ansiForeground
   const base = lastMatch[2] === 'hex' ? 16 : 0
   const [r, g, b] = lastMatch.slice(3, 6).map((c: string) => (c ? parseInt(c, base) : -1))
 

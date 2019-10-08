@@ -10,4 +10,4 @@ export declare const ansiBackground: {
 export declare const ansiMatcher: RegExp;
 export declare const rgbMatcher: RegExp;
 export declare const hexMatcher: RegExp;
-export declare function resolveStyle(name: string): ANSICode | null;
+export declare function convertColorSpec(name: string): ANSICode | null;

@@ -21,15 +21,25 @@
   "typings": "types/index.d.ts",
   "types": "types/index.d.ts",
   "scripts": {
-    "prebuild": "rm -rf lib/* types/* && ./node_modules/.bin/tslint --project tsconfig.json -t stylish",
+    "lint": "tslint --project tsconfig.json -t stylish src/*.ts test/*.ts",
+    "test": "jest --coverage test",
+    "sanity": "yarn lint && yarn test",
+    "prebuild": "yarn lint && rm -rf lib/* types/*",
     "build": "tsc -p .",
+    "prepublish": "yarn sanity",
     "postpublish": "git push origin && git push origin -f --tags"
   },
   "devDependencies": {
     "@cowtech/tslint-config": "^5.13.0",
+    "@types/jest": "^24.0.18",
     "@types/node": "^12.7.11",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }

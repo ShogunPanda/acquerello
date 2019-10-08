@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "jsx": "preserve",
     "outDir": "lib",
@@ -18,6 +18,6 @@
     "baseUrl": ".",
     "declaration": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "test/**/*.ts"],
   "exclude": []
 }

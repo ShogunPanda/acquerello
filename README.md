@@ -2,7 +2,8 @@
 
 [![Package Version](https://img.shields.io/npm/v/acquerello.svg)](https://npm.im/acquerello)
 ![Dependency Status](https://img.shields.io/david/ShogunPanda/acquerello)
-![CircleCI](https://img.shields.io/circleci/build/gh/ShogunPanda/acquerello?token=a721161f936393ce2826774e8b89c0785c06967b)
+![Build](https://img.shields.io/circleci/build/gh/ShogunPanda/acquerello?token=a721161f936393ce2826774e8b89c0785c06967b)
+![Code Coverage](https://img.shields.io/codecov/c/gh/ShogunPanda/acquerello?token=d0ae1643f35c4c4f9714a357f796d05d)
 
 Template based terminal coloring made really easy.
 

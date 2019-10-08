@@ -22,8 +22,8 @@
   "types": "types/index.d.ts",
   "scripts": {
     "lint": "tslint --project tsconfig.json -t stylish src/*.ts test/*.ts",
-    "test": "jest --coverage test",
-    "ci": "jest --coverage --ci test",
+    "test": "jest test --coverage --coverageReporters=html",
+    "ci": "jest test --coverage --ci --coverageReporters=json",
     "sanity": "yarn lint && yarn test",
     "prebuild": "yarn lint && rm -rf lib/* types/*",
     "build": "tsc -p .",

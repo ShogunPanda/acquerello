@@ -1,9 +1,9 @@
 # acquerello
 
 [![Package Version](https://img.shields.io/npm/v/acquerello.svg)](https://npm.im/acquerello)
-![Dependency Status](https://img.shields.io/david/ShogunPanda/acquerello)
-![Build](https://img.shields.io/circleci/build/gh/ShogunPanda/acquerello?token=a721161f936393ce2826774e8b89c0785c06967b)
-![Code Coverage](https://img.shields.io/codecov/c/gh/ShogunPanda/acquerello?token=d0ae1643f35c4c4f9714a357f796d05d)
+[![Dependency Status](https://img.shields.io/david/ShogunPanda/acquerello)](https://david-dm.org/ShogunPanda/acquerello)
+[![Build](https://img.shields.io/circleci/build/gh/ShogunPanda/acquerello?token=a721161f936393ce2826774e8b89c0785c06967b)](https://circleci.com/gh/ShogunPanda/acquerello)
+[![Code Coverage](https://img.shields.io/codecov/c/gh/ShogunPanda/acquerello?token=d0ae1643f35c4c4f9714a357f796d05d)](https://codecov.io/gh/ShogunPanda/acquerello)
 
 Template based terminal coloring made really easy.
 
@@ -47,7 +47,7 @@ console.log(colorize('{{important}}This is in red, underlined.{{-}}'))
 acquerello supports 256 ANSI codes and 16m RGB colors. Just give it a try:
 
 ```javascript
-import {colorize} from 'acquerello
+import { colorize } from 'acquerello'
 
 console.log(colorize('{{ansi:100}}color me{{-}}'))
 console.log(colorize('{{bgANSI:3,4,5}}color me{{-}}'))
@@ -66,7 +66,7 @@ ANSI, RGB, and HEX can be used in style definitions and templates as well.
 To colorize strings, simply use the `applyStyle`, passing a list of styles you want to apply.
 
 ```javascript
-import { applyStyle } from 'github.com/ShogunPanda/acquerello'
+import { applyStyle } from 'acquerello'
 
 const inRed = applyStyle('Colorized', 'red')
 const inRedWithBlueBackground = applyStyle('Colorized', 'red bgBlue')

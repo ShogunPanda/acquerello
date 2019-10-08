@@ -33,4 +33,4 @@ jobs:
 
       # Upload to CodeCov
       - codecov/upload:
-          file: coverage
+          file: coverage/coverage-final.json

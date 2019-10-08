@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.2
 jobs:
   build:
     docker:
@@ -23,4 +25,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Run the suite
-      - run: yarn test
+      - run: yarn ci
+
+      # Store coverage informations
+      - store_artifacts:
+          path: coverage
+
+      # Upload to CodeCov
+      - codecov/upload:
+          file: coverage

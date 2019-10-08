@@ -23,6 +23,7 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json -t stylish src/*.ts test/*.ts",
     "test": "jest --coverage test",
+    "ci": "jest --coverage --ci test",
     "sanity": "yarn lint && yarn test",
     "prebuild": "yarn lint && rm -rf lib/* types/*",
     "build": "tsc -p .",

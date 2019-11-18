@@ -6,18 +6,17 @@
     "jsx": "preserve",
     "outDir": "lib",
     "declarationDir": "types",
-    "alwaysStrict": true,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true,
+    "keyofStringsOnly": true,
     "strictNullChecks": true,
-    "lib": ["es2017"],
-    "baseUrl": ".",
     "declaration": true
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": []
 }

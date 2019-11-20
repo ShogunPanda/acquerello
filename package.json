@@ -40,6 +40,8 @@
     "typescript": "^3.6.3"
   },
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "watchman": false,
+    "testRegex": ".+\\.spec\\.ts"
   }
 }

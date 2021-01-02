@@ -1,3 +1,8 @@
+### 2021-01-02 / 0.1.3
+
+- chore: Fixed workflow.
+- chore: Updated code and tools.
+
 ### 2019-11-20 / 0.1.2
 
 - chore: Minor configuration fix.

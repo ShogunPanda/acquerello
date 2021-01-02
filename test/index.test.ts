@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
+
 import t from 'tap'
 import { addCustomStyle, applyStyle, clean, colorize, deleteCustomStyle } from '../src'
 

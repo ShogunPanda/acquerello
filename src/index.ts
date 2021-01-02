@@ -6,6 +6,7 @@ export * from './codes'
 export * from './spec'
 export * from './styles'
 
+// eslint-disable-next-line no-useless-escape
 export const templateMatcher = /\{{2}([^\{\}]+?)\}{2}/gi
 
 export function colorize(raw: string): string {
@@ -48,7 +49,7 @@ export function colorize(raw: string): string {
         break
       } else {
         // Search in custom styles first
-        const styles = customStyles.get(token) || [token]
+        const styles = customStyles.get(token) ?? [token]
 
         for (const style of styles) {
           // Add a style

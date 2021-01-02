@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2019",
     "module": "commonjs",
     "moduleResolution": "node",
     "jsx": "preserve",
@@ -13,7 +13,6 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "keyofStringsOnly": true,
     "strictNullChecks": true,
     "declaration": true
   },

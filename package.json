@@ -4,11 +4,14 @@
   "description": "Template based terminal coloring made really easy.",
   "homepage": "https://sw.cowtech.it/acquerello",
   "repository": "github:ShogunPanda/acquerello",
+  "keywords": [
+    "colors"
+  ],
   "bugs": {
     "url": "https://github.com/ShogunPanda/acquerello/issues"
   },
   "author": "Shogun <shogun@cowtech.it>",
-  "license": "MIT",
+  "license": "ISC",
   "private": false,
   "files": [
     "lib",
@@ -21,27 +24,24 @@
   "typings": "types/index.d.ts",
   "types": "types/index.d.ts",
   "scripts": {
-    "lint": "tslint --project tsconfig.test.json -t stylish src/*.ts test/*.ts",
-    "test": "jest test --coverage --coverageReporters=html --coverageReporters=text",
-    "ci": "yarn lint && jest --coverage --coverageThreshold='{\"global\":{\"branches\":90,\"functions\":90,\"lines\":90,\"statements\":90}}' --ci --coverageReporters=json",
+    "lint": "eslint src/*.ts test/*.ts",
+    "test": "tap --reporter=spec --coverage-report=html --coverage-report=text --no-browser test/*.test.ts",
+    "test:ci": "tap --no-color --reporter=spec --coverage-report=json --coverage-report=text --branches 90 --functions 90 --lines 90 --statements 90 test/*.test.ts",
+    "ci": "yarn lint && yarn test:ci",
     "prebuild": "rm -rf lib/* types/* && yarn lint",
     "build": "tsc -p .",
     "prepublishOnly": "yarn ci",
     "postpublish": "git push origin && git push origin -f --tags"
   },
   "devDependencies": {
-    "@cowtech/tslint-config": "^5.13.0",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.11",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.1.0",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.3"
+    "@cowtech/eslint-config": "^7.10.1",
+    "@types/node": "^14.14.19",
+    "@types/tap": "^14.10.1",
+    "prettier": "^2.2.1",
+    "tap": "^14.11.0",
+    "ts-node": "^9.1.1"
   },
-  "jest": {
-    "preset": "ts-jest",
-    "watchman": false,
-    "testRegex": ".+\\.spec\\.ts"
+  "engines": {
+    "node": ">=12.15.0"
   }
 }

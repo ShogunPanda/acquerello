@@ -5,6 +5,7 @@ export function applyStyle(content: string, ...styles: Array<string>): string {
 }
 
 export function addCustomStyle(name: string, ...styles: Array<string>): void {
+  // eslint-disable-next-line no-useless-escape
   if (!name.match(/^[^\s\{\}]+$/)) {
     throw new Error('The custom style name cannot contain spaces or curly braces')
   }

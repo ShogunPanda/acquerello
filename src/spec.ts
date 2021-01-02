@@ -9,12 +9,9 @@ export const rgbMatcher = /^(bg)?(rgb):(\d+)[,;](\d+)[,;](\d+)$/i
 export const hexMatcher = /^(bg)?(hex):(?:#?)([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i
 
 export function convertColorSpec(name: string): ANSICode | null {
-  const lastMatch: RegExpMatchArray = (
-    name.match(ansiMatcher) ||
-    name.match(rgbMatcher) ||
-    name.match(hexMatcher) ||
-    []
-  ).map((m: string) => (m ? m.toLowerCase() : m))
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  let lastMatch: RegExpMatchArray = name.match(ansiMatcher) || name.match(rgbMatcher) || name.match(hexMatcher) || []
+  lastMatch = lastMatch.map((m: string) => (m ? m.toLowerCase() : m))
 
   const ansiBase = lastMatch[1] && lastMatch[1] === 'bg' ? ansiBackground : ansiForeground
   const base = lastMatch[2] === 'hex' ? 16 : 0

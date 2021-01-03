@@ -1,3 +1,9 @@
+### 2021-01-03 / 0.1.4
+
+- chore: Updated linter config.
+- chore: Updated config.
+- chore: Minor typo.
+
 ### 2021-01-02 / 0.1.3
 
 - chore: Fixed workflow.

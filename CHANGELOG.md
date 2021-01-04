@@ -1,3 +1,8 @@
+### 2021-01-04 / 0.2.0
+
+- chore: Updated dist files.
+- feat: Also export as ESM.
+
 ### 2021-01-03 / 0.1.4
 
 - chore: Updated linter config.

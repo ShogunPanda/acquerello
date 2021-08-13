@@ -1,3 +1,9 @@
+### 2021-08-13 / 1.0.0-beta.0
+
+- chore: Use Node LTS in CI.
+- feat: Only export as ESM.
+- chore: Fine tuned build script.
+
 ### 2021-01-04 / 0.2.0
 
 - chore: Updated dist files.

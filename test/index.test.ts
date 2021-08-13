@@ -139,7 +139,7 @@ t.test('addCustomStyle / deleteCustomStyle', (t: Test) => {
 
   t.test('Should reject custom styles name which contain spaces or curly brace', (t: Test) => {
     for (const s of ['{{invalid', 'invalid}}', 'no spaces']) {
-      t.throw(() => addCustomStyle(s, 'red'), new Error('The custom style name cannot contain spaces or curly braces'))
+      t.throws(() => addCustomStyle(s, 'red'), new Error('The custom style name cannot contain spaces or curly braces'))
     }
 
     t.end()

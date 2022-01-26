@@ -11,11 +11,11 @@ export const hexMatcher = /^(bg)?(hex):(?:#?)([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]
 export function convertColorSpec(name: string): ANSICode | null {
   // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
   let lastMatch: RegExpMatchArray = name.match(ansiMatcher) || name.match(rgbMatcher) || name.match(hexMatcher) || []
-  lastMatch = lastMatch.map((m: string) => (m ? m.toLowerCase() : m))
+  lastMatch = lastMatch.map(m => (m ? m.toLowerCase() : m))
 
   const ansiBase = lastMatch[1] && lastMatch[1] === 'bg' ? ansiBackground : ansiForeground
   const base = lastMatch[2] === 'hex' ? 16 : 0
-  const [r, g, b] = lastMatch.slice(3, 6).map((c: string) => (c ? parseInt(c, base) : -1))
+  const [r, g, b] = lastMatch.slice(3, 6).map(c => (c ? parseInt(c, base) : -1))
 
   if (lastMatch[2] === 'ansi') {
     // Short color spec - Valid if r goes from 16 to 255, included

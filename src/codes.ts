@@ -1,8 +1,5 @@
 function flatten<T>(input: Array<T | Array<T>>): Array<T> {
-  return input.reduce<Array<T>>(
-    (accu: Array<T>, entry: T | Array<T>) => accu.concat(Array.isArray(entry) ? entry : [entry]),
-    []
-  )
+  return input.reduce<Array<T>>((accu, entry) => accu.concat(Array.isArray(entry) ? entry : [entry]), [])
 }
 
 export interface ANSICode {
@@ -12,7 +9,7 @@ export interface ANSICode {
 
 export function escapeCode(...code: Array<number | Array<number>>): string {
   return `\x1b[${flatten(code)
-    .map((c: number) => c.toString())
+    .map(c => c.toString())
     .join(';')}m`
 }
 

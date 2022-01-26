@@ -15,7 +15,7 @@ export function colorize(raw: string): string {
   let stylesInserted = false
 
   // For each tag in the string
-  let modified = raw.replace(templateMatcher, (_: string, spec: string) => {
+  let modified = raw.replace(templateMatcher, (_, spec) => {
     const revert: Array<ANSICode> = []
     let replacement = ''
 
@@ -33,12 +33,12 @@ export function colorize(raw: string): string {
           replacement += stylesStack
             .shift()!
             .reverse()
-            .map((s: ANSICode) => s.close)
+            .map(s => s.close)
             .join('')
 
           // If there is a style to restore it, reapply it
           if (stylesStack.length) {
-            replacement += stylesStack[0].map((s: ANSICode) => s.open).join('')
+            replacement += stylesStack[0].map(s => s.open).join('')
           }
         }
 

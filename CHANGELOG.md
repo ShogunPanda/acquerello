@@ -1,3 +1,7 @@
+### 2022-03-07 / 1.0.6
+
+- chore: Added SWC configuration file.
+
 ### 2022-03-07 / 1.0.5
 
 - chore: Updated Typescript configuration.

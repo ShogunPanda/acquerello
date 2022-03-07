@@ -14,11 +14,12 @@ jobs:
       - name: Restore cached dependencies
         uses: actions/cache@v2
         with:
-          path: node_modules
+          path: ~/.pnpm-store
           key: node-modules-${{ hashFiles('package.json') }}
       - name: Install dependencies
-        uses: pnpm/action-setup@v2.1.0
+        uses: pnpm/action-setup@v2
         with:
+          version: latest
           run_install: true
       - name: Run Tests
         run: pnpm run ci

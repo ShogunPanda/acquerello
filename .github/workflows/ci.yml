@@ -17,9 +17,11 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('package.json') }}
       - name: Install dependencies
-        run: npm install
+        uses: pnpm/action-setup@v2.1.0
+        with:
+          run_install: true
       - name: Run Tests
-        run: npm run ci
+        run: pnpm run ci
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:

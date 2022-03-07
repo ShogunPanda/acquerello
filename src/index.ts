@@ -1,13 +1,12 @@
-import { ANSICode, defaultStyles } from './codes'
-import { convertColorSpec } from './spec'
-import { customStyles } from './styles'
+import { ANSICode, defaultStyles } from './codes.js'
+import { convertColorSpec } from './spec.js'
+import { customStyles } from './styles.js'
 
-export * from './codes'
-export * from './spec'
-export * from './styles'
+export * from './codes.js'
+export * from './spec.js'
+export * from './styles.js'
 
-// eslint-disable-next-line no-useless-escape
-export const templateMatcher = /\{{2}([^\{\}]+?)\}{2}/gi
+export const templateMatcher = /{{2}([^{}]+?)}{2}/gi
 
 export function colorize(raw: string): string {
   // Create a new styles stack

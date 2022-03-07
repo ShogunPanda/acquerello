@@ -1,14 +1,11 @@
-function flatten<T>(input: Array<T | Array<T>>): Array<T> {
-  return input.reduce<Array<T>>((accu, entry) => accu.concat(Array.isArray(entry) ? entry : [entry]), [])
-}
-
 export interface ANSICode {
   open: string
   close: string
 }
 
 export function escapeCode(...code: Array<number | Array<number>>): string {
-  return `\x1b[${flatten(code)
+  return `\u001B[${code
+    .flat(Number.POSITIVE_INFINITY)
     .map(c => c.toString())
     .join(';')}m`
 }

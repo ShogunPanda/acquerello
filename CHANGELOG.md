@@ -1,3 +1,9 @@
+### 2022-03-07 / 1.0.7
+
+- chore: Fix CI.
+- chore: Use PNPM on CI.
+- chore: Updated dependencies.
+
 ### 2022-03-07 / 1.0.6
 
 - chore: Added SWC configuration file.

@@ -10,12 +10,12 @@ export const templateMatcher = /{{2}([^{}]+?)}{2}/gi
 
 export function colorize(raw: string): string {
   // Create a new styles stack
-  let stylesStack: Array<Array<ANSICode>> = []
+  let stylesStack: ANSICode[][] = []
   let stylesInserted = false
 
   // For each tag in the string
-  let modified = raw.replace(templateMatcher, (_, spec) => {
-    const revert: Array<ANSICode> = []
+  let modified = raw.replaceAll(templateMatcher, (_, spec) => {
+    const revert: ANSICode[] = []
     let replacement = ''
 
     // Get all the styles - Whatever is not found in ansi-styles is ignored
@@ -80,5 +80,5 @@ export function colorize(raw: string): string {
 }
 
 export function clean(raw: string): string {
-  return raw.replace(templateMatcher, '')
+  return raw.replaceAll(templateMatcher, '')
 }

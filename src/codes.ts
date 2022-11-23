@@ -3,14 +3,14 @@ export interface ANSICode {
   close: string
 }
 
-export function escapeCode(...code: Array<number | Array<number>>): string {
+export function escapeCode(...code: (number | number[])[]): string {
   return `\u001B[${code
     .flat(Number.POSITIVE_INFINITY)
     .map(c => c.toString())
     .join(';')}m`
 }
 
-export function makeAnsiCode(open: number | Array<number>, close: number | Array<number>): ANSICode {
+export function makeAnsiCode(open: number | number[], close: number | number[]): ANSICode {
   return { open: escapeCode(open), close: escapeCode(close) }
 }
 

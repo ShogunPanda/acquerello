@@ -1,4 +1,4 @@
-import { ANSICode, defaultStyles, makeAnsiCode } from './codes.js'
+import { defaultStyles, makeAnsiCode, type ANSICode } from './codes.js'
 
 // Base styles for ANSI, RGB and HEX
 export const ansiForeground = { open: 38, close: 39 }

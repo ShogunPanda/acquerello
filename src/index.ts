@@ -1,4 +1,4 @@
-import { ANSICode, defaultStyles } from './codes.js'
+import { defaultStyles, type ANSICode } from './codes.js'
 import { convertColorSpec } from './spec.js'
 import { customStyles } from './styles.js'
 

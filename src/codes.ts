@@ -15,7 +15,7 @@ export function makeAnsiCode(open: number | number[], close: number | number[]):
 }
 
 // This is the list of ANSI Escape codes, taken from https://github.com/chalk/ansi-styles
-export const defaultStyles: { [key: string]: ANSICode } = {
+export const defaultStyles: Record<string, ANSICode> = {
   reset: makeAnsiCode(0, 0),
   // Style
   bold: makeAnsiCode(1, 22), // 21 isn't widely supported and 22 does the same thing

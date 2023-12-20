@@ -19,7 +19,7 @@ export function colorize(raw: string): string {
     let replacement = ''
 
     // Get all the styles - Whatever is not found in ansi-styles is ignored
-    const tokens = spec
+    const tokens: string[] = spec
       .trim()
       .split(/\s+/)
       .map((s: string) => s.trim())

@@ -3,7 +3,10 @@
   "version": "2.0.1",
   "description": "Template based terminal coloring made really easy.",
   "homepage": "https://sw.cowtech.it/acquerello",
-  "repository": "github:ShogunPanda/acquerello",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShogunPanda/acquerello.git"
+  },
   "keywords": [
     "colors"
   ],

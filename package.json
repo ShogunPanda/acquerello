@@ -32,8 +32,8 @@
     "format": "prettier -w src test",
     "lint": "eslint --cache",
     "typecheck": "tsc -p . --emitDeclarationOnly",
-    "test": "c8 -c test/config/c8-local.json node --env-file=.env --test test/*.test.ts",
-    "test:ci": "c8 -c test/config/c8-ci.json node --env-file=.env --test-reporter=tap --test test/*.test.ts",
+    "test": "c8 -c test/config/c8-local.json node --env-file=test.env --test test/*.test.ts",
+    "test:ci": "c8 -c test/config/c8-ci.json node --env-file=test.env --test-reporter=tap --test test/*.test.ts",
     "ci": "npm run build && npm run test:ci",
     "prepublishOnly": "npm run ci",
     "postpublish": "git push origin && git push origin -f --tags"

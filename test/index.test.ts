@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
 import { deepStrictEqual, throws } from 'node:assert'
 import { test } from 'node:test'
 import { addCustomStyle, applyStyle, clean, colorize, deleteCustomStyle } from '../src/index.js'

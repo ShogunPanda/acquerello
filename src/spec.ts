@@ -10,7 +10,6 @@ export const hexMatcher = /^(bg)?(hex):#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i
 
 export function convertColorSpec(name: string): ANSICode | null {
   let lastMatch: RegExpMatchArray | string[] =
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     name.match(ansiMatcher) || name.match(rgbMatcher) || name.match(hexMatcher) || []
   lastMatch = lastMatch.map(m => (m ? m.toLowerCase() : m))
 

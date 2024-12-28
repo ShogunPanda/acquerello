@@ -1,3 +1,9 @@
+### 2024-12-28 / 3.0.1
+
+- chore: Updated dependencies.
+- chore: Fixed Node.js version in CI.
+- chore: Do not use hidden files for test environment.
+
 ### 2024-10-20 / 3.0.0
 
 - feat!: Dropped support for Node 18 and updated dependencies.

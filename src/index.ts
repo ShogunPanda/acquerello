@@ -1,3 +1,3 @@
-export * from './codes.js'
-export * from './spec.js'
-export * from './styles.js'
+export * from './codes.ts'
+export * from './spec.ts'
+export * from './styles.ts'

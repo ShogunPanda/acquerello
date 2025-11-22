@@ -1,6 +1,6 @@
 import { deepStrictEqual, throws } from 'node:assert'
 import { test } from 'node:test'
-import { addCustomStyle, applyStyle, clean, colorize, deleteCustomStyle } from '../src/index.js'
+import { addCustomStyle, applyStyle, clean, colorize, deleteCustomStyle } from '../src/index.ts'
 
 test('applyStyle', async () => {
   await test('Applies known styles', () => {

@@ -1,5 +1,5 @@
-import { defaultStyles, type ANSICode } from './codes.js'
-import { convertColorSpec } from './spec.js'
+import { defaultStyles, type ANSICode } from './codes.ts'
+import { convertColorSpec } from './spec.ts'
 
 export const templateMatcher = /{{2}([^{}]+?)}{2}/gi
 

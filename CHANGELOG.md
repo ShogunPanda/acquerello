@@ -1,3 +1,8 @@
+### 2025-11-24 / 4.0.2
+
+- chore: Updated dependencies.
+- chore: Fixed CI script.
+
 ### 2025-11-22 / 4.0.1
 
 - chore: Updated dependencies.
